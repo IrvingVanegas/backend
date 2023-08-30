@@ -33,6 +33,12 @@ app.get("/temperatura", (req,res)=>{
     })
 })
 
+//SELECT AVG(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent;
+//SELECT STDDEV_POP(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent; population
+//SELECT STDDEV_SAMP(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent; sample
+//SELECT VAR_SAMP(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent; sample
+//SELECT VAR_POP(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent; population
+
 app.get("/produccionTotal", (req,res)=>{
     const q = "SELECT * FROM (SELECT * FROM totalwatts ORDER BY idwatts DESC LIMIT 7) VAR1 ORDER BY idwatts ASC"
     db.query(q,(err,data)=>{
