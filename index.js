@@ -1,13 +1,22 @@
 import Express from "express";
 import mysql from "mysql";
 import cors from "cors";
+import { 
+    PORT,
+    DB_HOST,
+    DB_NAME,
+    DB_PASSWORD,
+    DB_USER,
+    DB_PORT
+ } from "./config.js";
 
 const app = Express();
 const db = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"",
-    database:"agrovoltaica"
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_NAME,
+    port: DB_PORT
 })
 
 app.use(Express.json())
@@ -209,7 +218,7 @@ app.get("/produccionTotal/:captura", (req,res)=>{
     })
 })
 
-app.listen(8800, ()=>{
+app.listen(PORT, ()=>{
     console.log("conexion al backend");
 })
 
