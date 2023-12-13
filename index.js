@@ -221,9 +221,3 @@ app.get("/produccionTotal/:captura", (req,res)=>{
 app.listen(PORT, ()=>{
     console.log("conexion al backend");
 })
-
-//SELECT AVG(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent;
-//SELECT STDDEV_POP(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent; population
-//SELECT STDDEV_SAMP(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent; sample
-//SELECT VAR_SAMP(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent; sample
-//SELECT VAR_POP(centigrados) FROM (SELECT centigrados FROM temperatura ORDER BY idtemperatura DESC LIMIT 7) cent; population
